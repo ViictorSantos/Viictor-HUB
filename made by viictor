@@ -1,0 +1,63 @@
+-- \\ Init UI
+repeat wait() until game:IsLoaded()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({     
+    Name = "ViictorHUB ", 
+    HidePremium = false, 
+    SaveConfig = true, 
+    ConfigFolder = "Yoshi"
+})
+
+local ScriptsTab = Window:MakeTab({
+    Name = "Anime Fighters",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local AFSXTab = Window:MakeTab({
+    Name = "AFSX",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- \\ Function
+function LoadScript(Raw)
+    loadstring(game:HttpGet(Raw, true))()
+end
+
+if game.PlaceId == 6299805723 then
+
+    ScriptsTab:AddSection({
+        Name = "Badware"
+    })
+    
+    ScriptsTab:AddButton({
+        Name = "Dupe (Funcionando)(Sem KEY)",
+        Callback = function()
+            LoadScript("https://raw.githubusercontent.com/sandwichk/RobloxScripts/main/Scripts/BadWare/Dupe/AFSim")
+        end
+    })
+
+    ScriptsTab:AddButton({
+        Name = "Yuto HUB(Com KEY)",
+        Callback = function()
+            repeat wait() until game:IsLoaded()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Binintrozza/yutv2e/main/afss"))()
+        end
+    })
+
+    AFSXTab:AddButton({
+        Name = "Sky HUB(Com KEY)",
+        Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/SKOIXLL/RIVERHUB-SKYHUB/main/WL.lua'))();
+        end
+    })
+
+    AFSXTab:AddButton({
+        Name = "Blox HUB(Sem KEY)",
+        Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/malicious-dev/RobloxScripting/main/AFSX.lua'))();
+        end
+    })
+
+end 
